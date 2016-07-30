@@ -1,7 +1,7 @@
 const cron = require('node-cron')
-const config = require('./config')
 const Tracker = require('./src/main')
 
-const tracker = new Tracker(config)
+const homeConfig = require('/Users/arlux/.pokecron-go/home.config')
+const tracker = new Tracker(homeConfig)
 task = cron.schedule('0,30 * * * * *',tracker, false)
 task.start()
