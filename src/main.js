@@ -23,7 +23,7 @@ module.exports = function (config) {
   // initialize
   const pokemonClient = PokemonClient(config.pokemon)
   const databaseClient = DatabaseClient(config.db)
-  const pushbulletClient = PushbulletClient(config.notifications.pushbullet);
+  const pushbulletClient = PushbulletClient(config.notifications.pushbullet, config.location);
 
   return function () {
     logger.info('info', `Running at ${new Date().toString()}`)
